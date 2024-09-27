@@ -1,18 +1,23 @@
 #!/usr/bin/env bash
 
+# Exit immediately if a command exits with a non-zero status,
+# and treat unset variables as an error and exit immediately.
 set -Eeuo pipefail
 
+# Enable debugging if DOTFILES_DEBUG is set.
 if [ "${DOTFILES_DEBUG:-}" ]; then
     set -x
 fi
 
+# Function to install command line developer tools if not already installed.
 function install_command_line_tool() {
     local git_cmd_path="/Library/Developer/CommandLineTools/usr/bin/git"
 
+    # Check if the git command from the command line tools exists.
     if [ ! -e "${git_cmd_path}" ]; then
         # Install command line developer tool
         xcode-select --install
-        # Want for user input
+        # Wait for user input to confirm installation completion.
         echo "Press any key when the installation has completed."
         IFS= read -r -n 1 -d ''
         #          │  │    └ The first character of DELIM is used to terminate the input line, rather than newline.
@@ -27,10 +32,12 @@ function install_command_line_tool() {
     fi
 }
 
+# Main function to install command line developer tools.
 function main() {
     install_command_line_tool
 }
 
+# If the script is being run directly, execute the main function.
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
     main
 fi

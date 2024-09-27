@@ -15,5 +15,3 @@ fpath=(
     ${HOME}/.local/bin/common(N-/)
     ${HOME}/.local/bin/server(N-/)
 )
-
-eval "$(sheldon source)"
