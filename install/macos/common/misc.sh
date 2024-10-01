@@ -20,10 +20,10 @@ readonly BREW_PACKAGES=(
 )
 
 # Define an array of Homebrew Cask packages to be installed.
-readonly CASK_PACKAGES=(
-    google-chrome
-    spotify
-)
+# readonly CASK_PACKAGES=(
+#     google-chrome
+#     spotify
+# )
 
 # Function to check if a Homebrew package is installed.
 function is_brew_package_installed() {
@@ -81,7 +81,7 @@ function setup_google_chrome() {
 # Main function to install packages and set up Google Chrome.
 function main() {
     install_brew_packages
-    install_brew_cask_packages
+    # install_brew_cask_packages
     setup_google_chrome
 }
 
