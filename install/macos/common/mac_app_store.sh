@@ -57,22 +57,21 @@ function install_tailscale() {
     run_mas_install "${app_id}"
 }
 
-# Main function to install 'mas' and then install apps if not in a CI environment.
-function main() {
-    # install_mas
-    # install_bandwidth_plus
-    # install_line
-    # install_1password7
-    # install_xcode
-    # install_tailscale
+# # Main function to install 'mas' and then install apps if not in a CI environment.
+# function main() {
 
-    # Check if not running in a Continuous Integration (CI) environment.
-    if ! "${CI:-false}"; then
-        # Add app installation functions here if needed.
-    fi
-}
+#     # Check if not running in a Continuous Integration (CI) environment.
+#     if ! "${CI:-false}"; then
+#     # install_mas
+#     # install_bandwidth_plus
+#     # install_line
+#     # install_1password7
+#     # install_xcode
+#     # install_tailscale
+#     fi
+# }
 
-# If the script is being run directly, execute the main function.
-if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-    main
-fi
+# # If the script is being run directly, execute the main function.
+# if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+#     main
+# fi
