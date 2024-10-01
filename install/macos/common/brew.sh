@@ -26,10 +26,19 @@ function opt_out_of_analytics() {
     brew analytics off
 }
 
+# Function to add Homebrew to the PATH.
+function add_homebrew_to_path() {
+    if is_homebrew_exists; then
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+        echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zshrc
+    fi
+}
+
 # Main function to install Homebrew and opt out of analytics.
 function main() {
     install_homebrew
     opt_out_of_analytics
+    add_homebrew_to_path
 }
 
 # If the script is being run directly, execute the main function.
