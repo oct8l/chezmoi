@@ -255,7 +255,7 @@ function main() {
     # defaults_dock
     # defaults_input_sources
     # defaults_finder
-    # defaults_screencapture
+    defaults_screencapture
     # defaults_assistant
     # defaults_iterm2
     # kill_affected_applications
