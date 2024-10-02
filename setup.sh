@@ -284,6 +284,7 @@ function main() {
 
     initialize_os_env
     initialize_dotfiles
+    rm -rfv "${chezmoi_dir}"
 
     # restart_shell # Disabled because the at_exit function does not work properly.
     echo "Main function completed."
