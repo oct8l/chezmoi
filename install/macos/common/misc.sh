@@ -82,7 +82,7 @@ function setup_google_chrome() {
 function main() {
     install_brew_packages
     # install_brew_cask_packages
-    setup_google_chrome
+    # setup_google_chrome
 }
 
 # If the script is being run directly, execute the main function.
