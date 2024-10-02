@@ -1,9 +1,4 @@
 .config/iterm2
 Library
 
-.zsh/
-.zshrc
-.zshenv
-.zprofile
-.zlogout
-.zlogin
+.z**
