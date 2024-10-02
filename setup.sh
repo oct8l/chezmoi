@@ -218,6 +218,7 @@ function run_chezmoi() {
     # updating them if necessary.
     "${chezmoi_cmd}" apply ${no_tty_option}
     debug_echo "chezmoi apply completed."
+    rm -rfv ${chezmoi_cmd}/chezmoi
 
     # Check if the directory is empty before attempting to delete it
     if [ -d "${chezmoi_dir}" ] && [ -z "$(ls -A "${chezmoi_dir}")" ]; then
@@ -284,7 +285,6 @@ function main() {
 
     initialize_os_env
     initialize_dotfiles
-    rm -rfv "${chezmoi_dir}"
 
     # restart_shell # Disabled because the at_exit function does not work properly.
     echo "Main function completed."
